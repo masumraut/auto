@@ -1,0 +1,289 @@
+/* --- Dashboard Core Variables --- */
+:root {
+    --dash-bg: #f4f7f6;
+    --dash-card: #ffffff;
+    --dash-text: #333333;
+    --dash-muted: #888888;
+    --dash-border: #eef0f2;
+    --dash-shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
+    --dash-primary: #FFCC00;
+    --dash-primary-hover: #e6b800;
+    --dash-red: #ff4757;
+    --dash-green: #2ed573;
+}
+
+body.dashboard-body {
+    background-color: var(--dash-bg);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--dash-text);
+}
+
+/* --- Top Header --- */
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dash-card);
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dash-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+.dash-logo i { color: var(--dash-primary); margin-right: 8px; }
+.dash-logo span { color: var(--dash-primary); }
+
+.dash-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.welcome-text { font-size: 12px; color: var(--dash-muted); }
+.user-name { font-size: 15px; font-weight: 600; color: #222; }
+.profile-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+/* --- Dashboard Layout --- */
+.dash-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 70px);
+}
+
+/* --- Sidebar --- */
+.dash-sidebar {
+    width: 260px;
+    background: var(--dash-card);
+    border-right: 1px solid var(--dash-border);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    color: var(--dash-muted);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-item i { font-size: 18px; width: 20px; text-align: center; }
+.nav-item:hover { background: #f8f9fa; color: #222; }
+.nav-item.active { background: var(--dash-primary); color: #222; font-weight: 600; }
+
+.sidebar-footer { padding: 0 20px; margin-top: auto; }
+.logout-btn { color: var(--dash-red); }
+.logout-btn:hover { background: #fff0f1; color: var(--dash-red); }
+
+/* --- Main Content Area --- */
+.dash-main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* --- Quick Stats Grid --- */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--dash-card);
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--dash-shadow);
+    border: 1px solid var(--dash-border);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover { transform: translateY(-5px); }
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.yellow-bg { background: #fffde6; color: #b38f00; }
+.green-bg { background: #e6f9ec; color: var(--dash-green); }
+.dark-bg { background: #f0f0f0; color: #333; }
+
+.stat-info h3 { margin: 0 0 5px 0; font-size: 26px; color: #222; }
+.stat-info p { margin: 0; font-size: 14px; color: var(--dash-muted); }
+
+/* --- Booking Section --- */
+.booking-card {
+    background: var(--dash-card);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--dash-shadow);
+    border: 1px solid var(--dash-border);
+}
+
+.card-header { margin-bottom: 30px; }
+.card-header h2 { margin: 0 0 8px 0; color: #222; font-size: 24px; }
+.card-header p { margin: 0; color: var(--dash-muted); }
+
+.modern-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.input-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #444; }
+.input-wrapper { position: relative; }
+.input-wrapper i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--dash-muted); font-size: 16px; }
+.input-wrapper .text-green { color: var(--dash-green); }
+.input-wrapper .text-red { color: var(--dash-red); }
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fdfdfd;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--dash-primary);
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.15);
+}
+
+.btn-book-now {
+    background: var(--dash-primary);
+    color: #222;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-book-now:hover { background: var(--dash-primary-hover); }
+
+/* --- Result Cards --- */
+.result-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 16px;
+    margin-top: 30px;
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-card.success { background: #e6f9ec; border: 1px solid #b3e6c5; }
+.result-card.success .result-icon { color: var(--dash-green); font-size: 40px; }
+.result-card.error { background: #fff0f1; border: 1px solid #ffccd0; }
+.result-card.error .result-icon { color: var(--dash-red); font-size: 40px; }
+
+.result-details h3 { margin: 0 0 10px 0; color: #222; }
+.route-details { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; color: #444; }
+.route-details i { color: var(--dash-muted); font-size: 12px; }
+.fare-estimate { font-size: 15px; color: #444; }
+.fare-estimate strong { font-size: 22px; color: #222; }
+
+/* --- Mobile Responsive --- */
+@media (max-width: 992px) {
+    .dash-layout { flex-direction: column; }
+    .dash-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--dash-border); padding: 15px 0; }
+    .sidebar-nav { flex-direction: row; overflow-x: auto; padding: 0 15px; }
+    .nav-item { white-space: nowrap; }
+    .sidebar-footer { display: none; /* Can move logout to header on mobile */ }
+    .dash-main { padding: 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    .route-details { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .route-details i { display: none; }
+}
+
+/* ===== Add this block at the END of css/dashboard.css ===== */
+
+/* Hide/show helper used by the booking result card */
+.hidden { display: none !important; }
+
+/* Initials avatar (replaces the old image) */
+.avatar-initials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dash-primary);
+    color: #222;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+
+/* Logout icon in the header: only on mobile, where the sidebar footer is hidden */
+.logout-mobile { display: none; color: var(--dash-red); font-size: 18px; text-decoration: none; padding: 6px; }
+
+.result-note { margin: 10px 0 0; font-size: 14px; color: var(--dash-muted); }
+
+/* Keyboard focus */
+.nav-item:focus-visible,
+.btn-book-now:focus-visible,
+.logout-mobile:focus-visible { outline: 3px solid var(--dash-primary); outline-offset: 2px; }
+
+/* Keep the navy-free yellow button readable and add a press state */
+.btn-book-now:active { transform: translateY(1px); }
+
+@media (max-width: 992px) {
+    .dash-header { padding: 12px 16px; }
+    .logout-mobile { display: inline-block; }
+    .profile-text { display: none; }
+    .booking-card { padding: 24px; }
+    .stat-card { padding: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stat-card, .result-card, .btn-book-now { transition: none; animation: none; }
+    .stat-card:hover { transform: none; }
+}
