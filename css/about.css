@@ -1,0 +1,86 @@
+/* css/about.css — every class starts with "ab-" so it will not clash with style.css */
+:root {
+    --ab-yellow: #FFCC00;
+    --ab-ink: #222;
+    --ab-text: #4a555b;
+    --ab-muted: #6f7a80;
+    --ab-line: #e3e8ea;
+    --ab-bg: #f4f7f6;
+}
+
+main { font-family: 'Inter', sans-serif; color: var(--ab-text); }
+
+.ab-section { padding: 72px 20px; background: #fff; }
+.ab-section.ab-alt { background: var(--ab-bg); }
+.ab-wrap { max-width: 1100px; margin: 0 auto; }
+
+.ab-eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: #a07c00; margin-bottom: 10px;
+}
+.ab-section h2 { margin: 0 0 14px; font-size: clamp(26px, 4vw, 36px); line-height: 1.2; color: var(--ab-ink); font-weight: 800; letter-spacing: -.01em; }
+.ab-section p { margin: 0 0 14px; line-height: 1.7; font-size: 17px; }
+
+/* Story */
+.ab-story { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+.ab-badge {
+    background: var(--ab-yellow); color: var(--ab-ink); border-radius: 24px; padding: 40px 32px;
+    text-align: center; display: grid; gap: 10px; justify-items: center;
+}
+.ab-badge i { font-size: 40px; }
+.ab-badge strong { font-size: 38px; font-weight: 800; line-height: 1.1; }
+.ab-badge span { font-size: 16px; font-weight: 500; max-width: 24ch; }
+
+/* Section heading block */
+.ab-head { max-width: 640px; margin: 0 auto 40px; text-align: center; }
+
+/* Promise cards */
+.ab-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.ab-card {
+    background: #fff; border: 1px solid var(--ab-line); border-radius: 18px; padding: 30px 26px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.ab-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(149, 157, 165, .18); }
+.ab-icon {
+    width: 56px; height: 56px; border-radius: 14px; background: #fff3bf; color: #a07c00;
+    display: grid; place-items: center; font-size: 22px; margin-bottom: 18px;
+}
+.ab-card h3 { margin: 0 0 8px; font-size: 20px; color: var(--ab-ink); }
+.ab-card p { margin: 0; font-size: 15.5px; }
+
+/* Steps */
+.ab-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: none; }
+.ab-steps li { position: relative; padding: 28px 24px; border: 1px solid var(--ab-line); border-radius: 18px; background: #fff; }
+.ab-num {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--ab-ink); color: var(--ab-yellow);
+    display: grid; place-items: center; font-weight: 800; margin-bottom: 14px;
+}
+.ab-steps h3 { margin: 0 0 6px; font-size: 19px; color: var(--ab-ink); }
+.ab-steps p { margin: 0; font-size: 15.5px; }
+
+/* CTA */
+.ab-cta { background: var(--ab-ink); padding: 56px 20px; }
+.ab-cta-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.ab-cta h2 { margin: 0 0 6px; color: #fff; font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; }
+.ab-cta p { margin: 0; color: #c8d1d5; font-size: 17px; }
+.ab-cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.ab-btn {
+    display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 10px;
+    font-weight: 700; text-decoration: none; font-size: 16px; transition: filter .2s, transform .1s;
+}
+.ab-btn:hover { filter: brightness(.93); }
+.ab-btn:active { transform: translateY(1px); }
+.ab-btn-dark { background: var(--ab-yellow); color: var(--ab-ink); }
+.ab-btn-light { background: transparent; color: #fff; border: 2px solid #5b6a71; }
+.ab-btn:focus-visible { outline: 3px solid var(--ab-yellow); outline-offset: 3px; }
+
+@media (max-width: 860px) {
+    .ab-section { padding: 52px 16px; }
+    .ab-story { grid-template-columns: 1fr; gap: 28px; }
+    .ab-cards, .ab-steps { grid-template-columns: 1fr; }
+    .ab-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ab-card, .ab-btn { transition: none; }
+    .ab-card:hover { transform: none; }
+}

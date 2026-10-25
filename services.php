@@ -13,10 +13,10 @@
     <nav class="navbar">
         <div class="logo"><i class="fa-solid fa-taxi"></i> Gondia<span>Auto</span></div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="services.php" class="active">Services</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
         <a href="tel:+919876543210" class="btn-call"><i class="fa-solid fa-phone"></i> Book Now</a>
         <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
